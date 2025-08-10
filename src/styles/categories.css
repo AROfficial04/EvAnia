@@ -33,6 +33,9 @@
     box-shadow: var(--shadow-sm);
     transition: var(--transition-normal);
     position: relative;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
 }
 
 .category-card:hover {

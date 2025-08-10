@@ -36,12 +36,47 @@ document.addEventListener('DOMContentLoaded', function() {
         // Make slider touch-enabled for mobile
         setupTouchSlider();
         
-        // Make categories clickable
+        // Categories are now <a> elements with href attributes
+        // We need to handle the dragging vs clicking behavior
         categoryCards.forEach(card => {
-            card.addEventListener('click', function() {
-                const category = this.querySelector('h3').textContent;
-                // In a real app, you would navigate to the category page
-                console.log(`Navigating to ${category} category`);
+            let isDraggingCard = false;
+            let startX = 0;
+            
+            // Handle mouse events
+            card.addEventListener('mousedown', function(e) {
+                isDraggingCard = false;
+                startX = e.pageX;
+            });
+            
+            card.addEventListener('mousemove', function(e) {
+                if (Math.abs(e.pageX - startX) > 10) {
+                    isDraggingCard = true;
+                }
+            });
+            
+            card.addEventListener('click', function(e) {
+                // If we were dragging, prevent navigation
+                if (isDraggingCard) {
+                    e.preventDefault();
+                }
+            });
+            
+            // Handle touch events
+            card.addEventListener('touchstart', function(e) {
+                isDraggingCard = false;
+                startX = e.touches[0].clientX;
+            });
+            
+            card.addEventListener('touchmove', function(e) {
+                if (Math.abs(e.touches[0].clientX - startX) > 10) {
+                    isDraggingCard = true;
+                }
+            });
+            
+            card.addEventListener('touchend', function(e) {
+                if (isDraggingCard) {
+                    e.preventDefault();
+                }
             });
         });
     }

@@ -196,11 +196,25 @@
 }
 
 .categories-menu ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 12px 0;
     font-weight: 500;
     font-size: 0.95rem;
     transition: var(--transition-fast);
+}
+
+.dropdown > a::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 0.8rem;
+    transition: var(--transition-fast);
+}
+
+.dropdown:hover > a::after {
+    transform: rotate(180deg);
 }
 
 .categories-menu ul li a:hover {
@@ -212,11 +226,18 @@
     position: relative;
 }
 
+/* Fix for dropdowns that might overflow on the right side */
+.dropdown:nth-last-child(-n+3) .dropdown-content {
+    left: auto;
+    right: 0;
+}
+
 .dropdown-content {
     position: absolute;
     top: 100%;
     left: 0;
     width: 300px;
+    max-width: 90vw; /* Prevent overflow on small screens */
     background-color: var(--white);
     box-shadow: var(--shadow-md);
     border-radius: var(--radius-md);
@@ -226,12 +247,31 @@
     transform: translateY(10px);
     transition: all 0.3s ease-in-out;
     z-index: 10;
+    overflow-y: auto; /* Allow scrolling if content is too tall */
+    max-height: 80vh; /* Limit height to prevent overflow */
+}
+
+@keyframes fadeInDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .dropdown:hover .dropdown-content {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    animation: fadeInDropdown 0.3s ease-in-out;
+}
+
+.dropdown-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .dropdown-column h3 {
@@ -240,6 +280,12 @@
     font-size: 1.2rem;
     padding-bottom: 8px;
     border-bottom: 1px solid var(--light-pink);
+}
+
+.dropdown-column ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px 20px;
 }
 
 .dropdown-column ul li {
@@ -251,10 +297,14 @@
     font-size: 0.9rem;
     display: flex;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dropdown-column ul li a:hover {
     padding-left: 5px;
+    color: var(--ruby);
 }
 
 /* Mobile Menu Toggle */
@@ -336,5 +386,11 @@
     
     .location-selector {
         padding: 5px;
+    }
+    
+    /* Mobile dropdown adjustments */
+    .mobile-menu .mobile-category .category-items {
+        max-height: 250px;
+        overflow-y: auto;
     }
 }
