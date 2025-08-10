@@ -106,8 +106,8 @@
       menu.className = 'account-menu';
       menu.innerHTML = `
         <ul>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Orders / Bookings</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="orders.html">Orders / Bookings</a></li>
           <li><button type="button" class="logout-btn">Logout</button></li>
         </ul>
       `;

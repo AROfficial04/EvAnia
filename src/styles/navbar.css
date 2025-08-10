@@ -333,6 +333,12 @@
     cursor: pointer;
 }
 
+/* Account menu links */
+.account .account-menu ul li a[href="profile.html"]:before,
+.account .account-menu ul li a[href="orders.html"]:before {
+  content: '';
+}
+
 .account .account-menu a:hover,
 .account .account-menu button:hover {
     background: var(--light-pink);

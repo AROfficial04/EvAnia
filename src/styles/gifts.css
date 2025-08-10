@@ -3,7 +3,7 @@
 /* Hero Banner */
 .hero-banner {
     height: 500px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/gifts-hero.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=2000&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
