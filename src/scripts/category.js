@@ -463,22 +463,161 @@ function initSorting() {
 // Update product grid based on filters and sorting
 function updateProductGrid() {
     // In a real application, this would fetch filtered products from an API
-    // For this demo, we'll just simulate a loading state
+    // For this demo, we'll simulate filtering and sorting with the existing products
     
     const productGrid = document.querySelector('.product-grid');
-    if (productGrid) {
-        // Show loading state
-        productGrid.style.opacity = '0.5';
+    if (!productGrid) return;
+    
+    // Show loading state
+    productGrid.style.opacity = '0.5';
+    
+    // Get all filter values
+    const filters = getActiveFilters();
+    const sortOption = document.getElementById('sortSelect').value;
+    
+    // Get all product cards
+    const productCards = Array.from(document.querySelectorAll('.product-card'));
+    
+    // Simulate API request delay
+    setTimeout(() => {
+        // Filter products (in a real app, this would be done server-side)
+        const filteredProducts = filterProducts(productCards, filters);
         
-        // Simulate API request delay
-        setTimeout(() => {
-            // Reset opacity
-            productGrid.style.opacity = '1';
-            
-            // In a real app, this would update the products based on filters and sorting
-            // For this demo, we'll just leave the existing products
-        }, 500);
+        // Sort products
+        const sortedProducts = sortProducts(filteredProducts, sortOption);
+        
+        // Update the grid
+        updateGridWithProducts(sortedProducts);
+        
+        // Update results count
+        updateResultsCount(sortedProducts.length);
+        
+        // Reset opacity
+        productGrid.style.opacity = '1';
+    }, 500);
+}
+
+// Get all active filters
+function getActiveFilters() {
+    const filters = {
+        priceRange: {
+            min: parseInt(document.getElementById('minPrice').value) || 0,
+            max: parseInt(document.getElementById('maxPrice').value) || 20000
+        },
+        colors: [],
+        occasions: [],
+        newArrivals: document.getElementById('newArrivalsToggle').checked,
+        popularity: document.getElementById('popularityToggle').checked
+    };
+    
+    // Get selected colors
+    document.querySelectorAll('input[name="color"]:checked').forEach(checkbox => {
+        filters.colors.push(checkbox.value);
+    });
+    
+    // Get selected occasions
+    document.querySelectorAll('input[name="occasion"]:checked').forEach(checkbox => {
+        filters.occasions.push(checkbox.value);
+    });
+    
+    return filters;
+}
+
+// Filter products based on active filters
+function filterProducts(products, filters) {
+    // In a real app, this filtering would be done server-side
+    // For this demo, we'll simulate filtering by randomly removing some products
+    
+    // If no filters are active, return all products
+    if (
+        filters.colors.length === 0 && 
+        filters.occasions.length === 0 && 
+        !filters.newArrivals && 
+        !filters.popularity &&
+        filters.priceRange.min === 0 &&
+        filters.priceRange.max === 20000
+    ) {
+        return products;
     }
+    
+    // For demo purposes, we'll filter based on price only (since we have that data)
+    return products.filter(product => {
+        // Extract price from product
+        const priceText = product.querySelector('.discounted').textContent;
+        const price = parseInt(priceText.replace(/[^\d]/g, ''));
+        
+        // Check if price is within range
+        return price >= filters.priceRange.min && price <= filters.priceRange.max;
+    });
+}
+
+// Sort products based on selected sort option
+function sortProducts(products, sortOption) {
+    // Create a copy of the array to avoid modifying the original
+    const sortedProducts = [...products];
+    
+    switch (sortOption) {
+        case 'price-low-high':
+            sortedProducts.sort((a, b) => {
+                const priceA = parseInt(a.querySelector('.discounted').textContent.replace(/[^\d]/g, ''));
+                const priceB = parseInt(b.querySelector('.discounted').textContent.replace(/[^\d]/g, ''));
+                return priceA - priceB;
+            });
+            break;
+            
+        case 'price-high-low':
+            sortedProducts.sort((a, b) => {
+                const priceA = parseInt(a.querySelector('.discounted').textContent.replace(/[^\d]/g, ''));
+                const priceB = parseInt(b.querySelector('.discounted').textContent.replace(/[^\d]/g, ''));
+                return priceB - priceA;
+            });
+            break;
+            
+        case 'newest':
+            // For demo purposes, we'll just shuffle the products
+            shuffleArray(sortedProducts);
+            break;
+            
+        case 'rating':
+            sortedProducts.sort((a, b) => {
+                const ratingA = countStars(a.querySelector('.rating'));
+                const ratingB = countStars(b.querySelector('.rating'));
+                return ratingB - ratingA;
+            });
+            break;
+    }
+    
+    return sortedProducts;
+}
+
+// Count stars in rating element
+function countStars(ratingElement) {
+    const fullStars = ratingElement.querySelectorAll('.fa-star').length;
+    const halfStars = ratingElement.querySelectorAll('.fa-star-half-alt').length;
+    return fullStars + (halfStars * 0.5);
+}
+
+// Shuffle array (for demo purposes)
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+// Update grid with filtered and sorted products
+function updateGridWithProducts(products) {
+    const productGrid = document.querySelector('.product-grid');
+    if (!productGrid) return;
+    
+    // Clear the grid
+    productGrid.innerHTML = '';
+    
+    // Add products to the grid
+    products.forEach(product => {
+        productGrid.appendChild(product.cloneNode(true));
+    });
 }
 
 // Initialize load more functionality
