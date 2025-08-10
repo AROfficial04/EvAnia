@@ -124,6 +124,28 @@
     gap: 20px;
 }
 
+/* Login button shown when user is not authenticated */
+.utility-nav .login-btn {
+    padding: 8px 14px;
+    background: var(--ruby-gradient);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.utility-nav .login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
 .location-selector {
     display: flex;
     align-items: center;
@@ -267,6 +289,53 @@
     visibility: visible;
     transform: translateY(0);
     animation: fadeInDropdown 0.3s ease-in-out;
+}
+
+/* Account dropdown */
+.account .account-menu {
+    position: absolute;
+    top: 46px;
+    right: 0;
+    width: 220px;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: 10px;
+    display: none;
+    z-index: 50;
+}
+
+.account .account-menu.open {
+    display: block;
+}
+
+.account .account-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.account .account-menu li {
+    margin: 0;
+}
+
+.account .account-menu a,
+.account .account-menu button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.account .account-menu a:hover,
+.account .account-menu button:hover {
+    background: var(--light-pink);
 }
 
 .dropdown-column {

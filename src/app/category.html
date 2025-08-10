@@ -16,7 +16,10 @@
     <header class="navbar-container">
         <div class="navbar-row main-nav">
             <div class="logo">
-                <a href="index.html">EvAnia</a>
+                <a href="index.html">
+                    <img src="../assets/images/logo.svg" alt="EvAnia Logo" class="logo-img">
+                    <span>EvAnia</span>
+                </a>
             </div>
             
             <div class="search-bar">
@@ -317,7 +320,7 @@
                     <!-- Product Card Template (will be duplicated by JavaScript) -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="../assets/images/decor-1.jpg" alt="Romantic Dinner Setup">
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Romantic Dinner Setup">
                         </div>
                         <div class="product-details">
                             <h3>Romantic Candlelight Dinner</h3>
@@ -510,7 +513,76 @@
         </div>
     </footer>
 
+    <!-- Location Modal -->
+    <div class="location-modal" id="locationModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Select Your Location</h2>
+            <div class="location-search">
+                <input type="text" placeholder="Search for your city...">
+                <button class="use-my-location"><i class="fas fa-map-marker-alt"></i> Use My Location</button>
+            </div>
+            <div class="popular-cities">
+                <h3>Popular Cities</h3>
+                <div class="city-grid">
+                    <div class="city-item">Mumbai</div>
+                    <div class="city-item">Delhi</div>
+                    <div class="city-item">Bangalore</div>
+                    <div class="city-item">Hyderabad</div>
+                    <div class="city-item">Chennai</div>
+                    <div class="city-item">Kolkata</div>
+                    <div class="city-item">Pune</div>
+                    <div class="city-item">Ahmedabad</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <img src="../assets/images/logo.svg" alt="EvAnia Logo" class="logo-img">
+                <span>EvAnia</span>
+            </div>
+            <button class="close-menu">&times;</button>
+        </div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search for experiences, gifts, décor...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="gifts.html">Gifts</a></li>
+                <li><a href="offers.html" class="highlight">Offers / Deals</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-categories">
+            <div class="mobile-category">
+                <div class="category-header">
+                    <h3>Romantic Surprises</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="category-items">
+                    <li><a href="category.html?category=romantic-surprises&subcategory=candlelight-dinners">Candlelight Dinners</a></li>
+                    <li><a href="category.html?category=romantic-surprises&subcategory=at-home-romantic-setups">At-Home Romantic Setups</a></li>
+                    <li><a href="category.html?category=romantic-surprises&subcategory=proposal-anniversary-decorations">Proposal & Anniversary Decorations</a></li>
+                    <li><a href="category.html?category=romantic-surprises&subcategory=surprise-experiences">Surprise Experiences</a></li>
+                </ul>
+            </div>
+            <!-- Repeat for other categories -->
+        </div>
+        <div class="mobile-account">
+            <a href="#"><i class="fas fa-user"></i> My Account</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.3/nouislider.min.js"></script>
+    <script src="../scripts/auth.js"></script>
     <script src="../scripts/main.js"></script>
     <script src="../scripts/category.js"></script>
 </body>

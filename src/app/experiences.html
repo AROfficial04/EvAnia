@@ -175,7 +175,7 @@
             <div class="experiences-grid">
                 <div class="experience-card">
                     <div class="experience-image">
-                        <img src="../assets/images/decor-1.jpg" alt="Romantic Dinner">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Romantic Dinner">
                         <div class="experience-tag">Bestseller</div>
                     </div>
                     <div class="experience-details">
@@ -202,7 +202,7 @@
 
                 <div class="experience-card">
                     <div class="experience-image">
-                        <img src="../assets/images/decor-2.jpg" alt="Birthday Celebration">
+                        <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Birthday Celebration">
                         <div class="experience-tag">Popular</div>
                     </div>
                     <div class="experience-details">
@@ -229,7 +229,7 @@
 
                 <div class="experience-card">
                     <div class="experience-image">
-                        <img src="../assets/images/decor-3.jpg" alt="Baby Shower">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baby Shower">
                         <div class="experience-tag">New</div>
                     </div>
                     <div class="experience-details">
@@ -256,7 +256,7 @@
 
                 <div class="experience-card">
                     <div class="experience-image">
-                        <img src="../assets/images/decor-4.jpg" alt="Anniversary Celebration">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Anniversary Celebration">
                     </div>
                     <div class="experience-details">
                         <h3>Anniversary Special Package</h3>
@@ -480,6 +480,74 @@
         </div>
     </footer>
 
+    <!-- Location Modal -->
+    <div class="location-modal" id="locationModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Select Your Location</h2>
+            <div class="location-search">
+                <input type="text" placeholder="Search for your city...">
+                <button class="use-my-location"><i class="fas fa-map-marker-alt"></i> Use My Location</button>
+            </div>
+            <div class="popular-cities">
+                <h3>Popular Cities</h3>
+                <div class="city-grid">
+                    <div class="city-item">Mumbai</div>
+                    <div class="city-item">Delhi</div>
+                    <div class="city-item">Bangalore</div>
+                    <div class="city-item">Hyderabad</div>
+                    <div class="city-item">Chennai</div>
+                    <div class="city-item">Kolkata</div>
+                    <div class="city-item">Pune</div>
+                    <div class="city-item">Ahmedabad</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <span>EvAnia</span>
+            </div>
+            <button class="close-menu">&times;</button>
+        </div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search for experiences, gifts, décor...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experiences.html" class="active">Experiences</a></li>
+                <li><a href="gifts.html">Gifts</a></li>
+                <li><a href="offers.html" class="highlight">Offers / Deals</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-categories">
+            <div class="mobile-category">
+                <div class="category-header">
+                    <h3>Romantic Surprises</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="category-items">
+                    <li><a href="category.html?category=romantic-surprises&subcategory=candlelight-dinners">Candlelight Dinners</a></li>
+                    <li><a href="category.html?category=romantic-surprises&subcategory=at-home-romantic-setups">At-Home Romantic Setups</a></li>
+                    <li><a href="category.html?category=romantic-surprises&subcategory=proposal-anniversary-decorations">Proposal & Anniversary Decorations</a></li>
+                    <li><a href="category.html?category=romantic-surprises&subcategory=surprise-experiences">Surprise Experiences</a></li>
+                </ul>
+            </div>
+            <!-- Repeat for other categories -->
+        </div>
+        <div class="mobile-account">
+            <a href="#"><i class="fas fa-user"></i> My Account</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+        </div>
+    </div>
+
+    <script src="../scripts/auth.js"></script>
     <script src="../scripts/main.js"></script>
     <script src="../scripts/experiences.js"></script>
 </body>
