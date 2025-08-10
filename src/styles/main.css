@@ -103,6 +103,39 @@ img {
     display: block;
 }
 
+/* Logo styling */
+.logo-img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transition: var(--transition-fast);
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
+
+/* Image enhancements */
+.decor-image img,
+.category-card img {
+    border-radius: var(--radius-lg);
+    transition: var(--transition-normal);
+    object-fit: cover;
+}
+
+.decor-image img:hover,
+.category-card img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-hover);
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
 button {
     cursor: pointer;
     font-family: var(--font-body);
@@ -152,16 +185,24 @@ section {
 
 /* Ready to Celebrate Section */
 .ready-to-celebrate {
-    background: var(--luxury-gradient);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
     padding: 5rem 0;
     text-align: center;
-    color: var(--text-dark);
+    color: var(--white);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
+
+
 
 .cta-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 2;
 }
 
 .ready-to-celebrate h2 {
