@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+
+{% block title %}EvAnia - Elegant Event Décor & Celebration Services{% endblock %}
+
+{% block extra_css %}
+   
+    <!-- <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/carousel.css">
+    <link rel="stylesheet" href="./styles/categories.css">
+    <link rel="stylesheet" href="./styles/listings.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    {% endblock %}
+
+    <!-- Navbar - Row 1 -->
+  
+    {% block content %}
+    <!-- Full-Width Showcase Carousel -->
+    <section class="showcase-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Elegant Romantic Setup">
+                <div class="carousel-caption">
+                    <h2>Romantic Dinner Setups</h2>
+                    <p>Create unforgettable moments with our elegant décor</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Birthday Celebration">
+                <div class="carousel-caption">
+                    <h2>Birthday Celebrations</h2>
+                    <p>Make your special day truly memorable</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baby Shower Setup">
+                <div class="carousel-caption">
+                    <h2>Baby Shower Décor</h2>
+                    <p>Celebrate new beginnings with style</p>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Corporate Event">
+                <div class="carousel-caption">
+                    <h2>Corporate Events</h2>
+                    <p>Elevate your business gatherings</p>
+                </div>
+            </div>
+            <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+                <span class="dot" data-slide="3"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse Categories Slider -->
+    <section class="categories-slider">
+        <div class="section-title">
+            <h2>Browse Categories</h2>
+        </div>
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <a href="category.html?category=romantic-surprises" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Romantic Surprises">
+                    <h3>Romantic Surprises</h3>
+                </a>
+                <a href="category.html?category=birthday-anniversary" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Birthday & Anniversary">
+                    <h3>Birthday & Anniversary</h3>
+                </a>
+                <a href="category.html?category=baby-shower-kids" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baby Shower & Kids">
+                    <h3>Baby Shower & Kids</h3>
+                </a>
+                <a href="category.html?category=personalized-gifts" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Personalized Gifts">
+                    <h3>Personalized Gifts</h3>
+                </a>
+                <a href="category.html?category=corporate-special-events" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Corporate & Special Events">
+                    <h3>Corporate & Special Events</h3>
+                </a>
+                <a href="category.html?category=cakes-bouquets" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" alt="Cakes & Bouquets">
+                    <h3>Cakes & Bouquets</h3>
+                </a>
+                <a href="category.html?category=festivals" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Festivals">
+                    <h3>Festivals</h3>
+                </a>
+            </div>
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Decor Listings Section -->
+    <section class="decor-listings">
+        <div class="section-title">
+            <h2>Featured Décor</h2>
+        </div>
+        <div class="listings-container">
+            <div class="decor-item">
+                <div class="decor-image">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Romantic Dinner Setup">
+                </div>
+                <div class="decor-details">
+                    <h3>Romantic Candlelight Dinner</h3>
+                    <div class="price">
+                        <span class="discounted">₹3,999</span>
+                        <span class="original">₹5,499</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="review-count">(124)</span>
+                    </div>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            <div class="decor-item">
+                <div class="decor-image">
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Birthday Balloon Decoration">
+                </div>
+                <div class="decor-details">
+                    <h3>Premium Birthday Balloon Décor</h3>
+                    <div class="price">
+                        <span class="discounted">₹2,499</span>
+                        <span class="original">₹3,299</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="review-count">(89)</span>
+                    </div>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            <div class="decor-item">
+                <div class="decor-image">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Baby Shower Setup">
+                </div>
+                <div class="decor-details">
+                    <h3>Elegant Baby Shower Package</h3>
+                    <div class="price">
+                        <span class="discounted">₹4,299</span>
+                        <span class="original">₹5,999</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span class="review-count">(56)</span>
+                    </div>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            <div class="decor-item">
+                <div class="decor-image">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" alt="Anniversary Decoration">
+                </div>
+                <div class="decor-details">
+                    <h3>Anniversary Special Décor</h3>
+                    <div class="price">
+                        <span class="discounted">₹3,799</span>
+                        <span class="original">₹4,999</span>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="review-count">(102)</span>
+                    </div>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready to Celebrate Section -->
+    <section class="ready-to-celebrate">
+        <div class="cta-container">
+            <h2>Ready to Celebrate?</h2>
+            <p>Let us make your special moments unforgettable with our elegant décor services</p>
+            <button class="cta-button">Book Your Experience</button>
+        </div>
+    </section>
+
+    {% endblock %}
+    
+
+    <!-- Location Modal -->
+    <div class="location-modal" id="locationModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Select Your Location</h2>
+            <div class="location-search">
+                <input type="text" placeholder="Search for your city.">
+                <button class="use-my-location"><i class="fas fa-map-marker-alt"></i> Use My Location</button>
+            </div>
+            <div class="popular-cities">
+                <h3>Popular Cities</h3>
+                <div class="city-grid">
+                    <div class="city-item">Mumbai</div>
+                    <div class="city-item">Delhi</div>
+                    <div class="city-item">Bangalore</div>
+                    <div class="city-item">Hyderabad</div>
+                    <div class="city-item">Chennai</div>
+                    <div class="city-item">Kolkata</div>
+                    <div class="city-item">Pune</div>
+                    <div class="city-item">Ahmedabad</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <span>EvAnia</span>
+            </div>
+            <button class="close-menu">&times;</button>
+        </div>
+        <div class="mobile-search">
+            <input type="text" placeholder="Search for experiences, gifts, décor.">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="gifts.html">Gifts</a></li>
+                <li><a href="offers.html" class="highlight">Offers / Deals</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-categories">
+            <div class="mobile-category">
+                <div class="category-header">
+                    <h3>Romantic Surprises</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <ul class="category-items">
+                    <li><a href="category.html?category=romantic-surprises&subcategory=candlelight-dinners">Candlelight Dinners</a></li>
+                    <li><a href="category.html?category=romantic-surprises&subcategory=at-home-romantic-setups">At-Home Romantic Setups</a></li>
+                    <li><a href="category.html?category=romantic-surprises&subcategory=proposal-anniversary-decorations">Proposal & Anniversary Decorations</a></li>
+                    <li><a href="category.html?category=romantic-surprises&subcategory=surprise-experiences">Surprise Experiences</a></li>
+                </ul>
+            </div>
+            <!-- Repeat for other categories -->
+        </div>
+        <div class="mobile-account">
+            <a href="#"><i class="fas fa-user"></i> My Account</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Cart (0)</a>
+        </div>
+    </div>
+
+    <script src="/scripts/auth.js"></script>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/carousel.js"></script>
+    <script src="/scripts/categories.js"></script>
+    <script src="/scripts/location.js"></script>
+    <script src="/scripts/booking.js"></script>
+</body>
+</html>
