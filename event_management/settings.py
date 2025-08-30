@@ -11,7 +11,7 @@ SECRET_KEY = 'django-insecure-n0@4fhr88pwls51w6=1=a1qk$udszgqova%=wlamexbe18*f3$
 
 DEBUG = True
 
-ALLOWED_HOSTS = [https://evania.vercel.app]
+ALLOWED_HOSTS = ['https://evania.vercel.app']
 
 # Application definition
 INSTALLED_APPS = [
