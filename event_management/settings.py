@@ -11,7 +11,7 @@ SECRET_KEY = 'django-insecure-n0@4fhr88pwls51w6=1=a1qk$udszgqova%=wlamexbe18*f3$
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [https://evania.vercel.app]
 
 # Application definition
 INSTALLED_APPS = [
@@ -32,6 +32,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
 ]
 
 ROOT_URLCONF = 'event_management.urls'
